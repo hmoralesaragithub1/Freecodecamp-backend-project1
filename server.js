@@ -20,7 +20,6 @@ app.get("/", function (req, res) {
 
 // your first API endpoint...
 app.get("/api", (req, res) => {
-  console.log("fecha de hoy");
   return res.json({
     unix: new Date().valueOf(),
     utc: new Date().toUTCString(),
@@ -43,8 +42,6 @@ app.get("/api/:date", function (req, res) {
   if (myDate == "Invalid Date") {
     return res.status(400).json({ error: "Invalid Date" });
   } else {
-    console.log("My date", myDate);
-    console.log("fecha usuario");
     return res.json({ unix: myDate.valueOf(), utc: myDate.toUTCString() });
   }
 });
